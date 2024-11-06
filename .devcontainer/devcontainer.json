@@ -8,9 +8,6 @@
 	"features": {
 		"ghcr.io/devcontainers/features/java:1": {
 			"installGradle": true,
-			"installMaven": true,
-			"installAnt": true,
-			"installGroovy": true,
 			"version": "latest",
 			"jdkDistro": "ms",
 			"gradleVersion": "latest",
@@ -35,14 +32,17 @@
 		"ghcr.io/devcontainers/features/sshd:1": {
 			"version": "latest"
 		},
-		"ghcr.io/devcontainers-community/features/llvm:3": {}
+		"ghcr.io/devcontainers-community/features/llvm:3": {},
+		"ghcr.io/wxw-matt/devcontainer-features/command_runner:0": {}
 	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "java -version",
+	"postAttachCommand": {
+		"cache deps": "gradle --refresh-dependencies",
+	},
 
 	// Configure tool-specific properties.
 	"customizations": {
