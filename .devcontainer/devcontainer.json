@@ -1,0 +1,65 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/java
+{
+	"name": "Java",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/java:1-21-bookworm",
+
+	"features": {
+		"ghcr.io/devcontainers/features/java:1": {
+			"installGradle": true,
+			"installMaven": true,
+			"installAnt": true,
+			"installGroovy": true,
+			"version": "latest",
+			"jdkDistro": "ms",
+			"gradleVersion": "latest",
+			"mavenVersion": "latest",
+			"antVersion": "latest",
+			"groovyVersion": "latest"
+		},
+		"ghcr.io/mikaello/devcontainer-features/kotlinc:1": {},
+		"ghcr.io/nordcominc/devcontainer-features/android-sdk:1": {},
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {
+			"moby": true,
+			"azureDnsAutoDetection": true,
+			"installDockerBuildx": true,
+			"installDockerComposeSwitch": true,
+			"version": "latest",
+			"dockerDashComposeVersion": "latest"
+		},
+		"ghcr.io/devcontainers/features/github-cli:1": {
+			"installDirectlyFromGitHubRelease": true,
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers/features/sshd:1": {
+			"version": "latest"
+		},
+		"ghcr.io/devcontainers-community/features/llvm:3": {}
+	},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "java -version",
+
+	// Configure tool-specific properties.
+	"customizations": {
+		"codespaces": {
+			"openFiles": ["README.md"]
+		},
+		"vscode": {
+			"extensions": [
+				"oracle.oracle-java",
+				"fwcd.kotlin",
+				"github.codespaces",
+				"github.vscode-github-actions",
+				"adelphes.android-dev-ext"
+			]
+		}
+	}
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}
